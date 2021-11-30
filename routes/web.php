@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\PassengersController;
+use App\Http\Controllers\Backend\DriverController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,8 @@ Route::get('/', function () {
 Route::get('/passengers/list', [PassengersController::class, 'list'])->name('admin.passengers');
 Route::get('/passengers/create', [PassengersController::class, 'create'])->name('admin.passengers.create');
 Route::post('/passengers/store', [PassengersController::class, 'store'])->name('admin.passengers.store');
+
+// Driver
+Route::get('/driver/list', [DriverController::class, 'list'])->name('admin.driver');
+Route::get('/driver/create', [DriverController::class, 'create'])->name('admin.driver.create');
+Route::post('/driver/store', [DriverController::class, 'store'])->name('admin.driver.store');

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Backend\PassengersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('admin.master');
 });
+
+// Passengers
+Route::get('/passengers/list', [PassengersController::class, 'list'])->name('admin.passengers');
+Route::get('/passengers/create', [PassengersController::class, 'create'])->name('admin.passengers.create');
+Route::post('/passengers/store', [PassengersController::class, 'store'])->name('admin.passengers.store');

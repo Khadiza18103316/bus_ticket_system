@@ -6,7 +6,7 @@
     <a href="{{ route('admin.passengers.create') }}" class="btn btn-success">Add Passenger</a>
 <br>
 <br>
-    <table class="table table-dark">
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th scope="col">#</th>

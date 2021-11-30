@@ -18,6 +18,14 @@ public function create(){
 }
 
 public function store(Request $request){
+
+   $request->validate([
+      'name'=>'required',
+      'phone'=>'required|numeric|digits:11',
+      'address'=>'required',
+      'email'=>'required',
+  ]);
+
   Passenger::create([
      //field name for DB || field name for form
 
@@ -26,6 +34,6 @@ public function store(Request $request){
      'address'=>$request->address,
      'email'=>$request->email,
   ]);
-  return redirect()->route('admin.passengers');
+  return redirect()->back()->with('msg','Passenger created successfully!');
 }
 }

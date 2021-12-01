@@ -34,6 +34,7 @@ class DriverController extends Controller
             'bus_name'=>$request->bus_name,
             'bus_number'=>$request->bus_number,
 ]);
-return redirect()->back()->with('msg','Passenger created successfully!');
+return redirect()->back()->with('msg','Driver created successfully!');
 }
 }
+

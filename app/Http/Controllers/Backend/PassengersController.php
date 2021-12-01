@@ -34,6 +34,6 @@ public function store(Request $request){
      'address'=>$request->address,
      'email'=>$request->email,
   ]);
-  return redirect()->back()->with('msg','Passenger created successfully!');
+  return redirect()->back()->with('msg','Passengers created successfully!');
 }
 }

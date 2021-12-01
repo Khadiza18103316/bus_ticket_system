@@ -1,7 +1,7 @@
 @extends('admin.master')
 @section('content')
 
-    <h2>Passenger list</h2>
+    <h3>Passenger list</h3>
 
     <a href="{{ route('admin.passengers.create') }}" class="btn btn-success">Add Passenger</a>
 <br>

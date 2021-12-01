@@ -1,7 +1,7 @@
 @extends('admin.master')
 @section('content')
 
-    <h1>Driver list</h1>
+    <h3>Driver list</h3>
 
     <a href="{{route('admin.driver.create')}}" class="btn btn-success">Add Driver</a>
     <br>

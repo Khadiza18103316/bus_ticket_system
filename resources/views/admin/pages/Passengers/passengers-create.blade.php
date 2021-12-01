@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1>Add passenger</h1>
+    <h3>Add passenger</h3>
 
     @if ($errors->any())
     @foreach ($errors->all() as $error)

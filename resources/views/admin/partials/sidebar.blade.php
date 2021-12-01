@@ -14,7 +14,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="{{url('admin/master')}}">
+        <a class="nav-link" href="{{route('admin.dashboard')}}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
@@ -42,9 +42,9 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Bus Components:</h6>
                 <a class="collapse-item" href="{{route('admin.driver')}}">Driver</a>
-                <a class="collapse-item" href="buttons.html">Counter</a>
-                <a class="collapse-item" href="buttons.html">Bus list</a>
-                <a class="collapse-item" href="cards.html">Bus route</a>
+                <a class="collapse-item" href="{{route('admin.counter')}}">Counter</a>
+                <a class="collapse-item" href="">Bus list</a>
+                <a class="collapse-item" href="">Bus route</a>
             </div>
         </div>
     </li>

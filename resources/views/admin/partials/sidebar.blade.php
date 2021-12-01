@@ -43,7 +43,7 @@
                 <h6 class="collapse-header">Bus Components:</h6>
                 <a class="collapse-item" href="{{route('admin.driver')}}">Driver</a>
                 <a class="collapse-item" href="{{route('admin.counter')}}">Counter</a>
-                <a class="collapse-item" href="">Bus list</a>
+                <a class="collapse-item" href="{{route('admin.bus')}}">Bus</a>
                 <a class="collapse-item" href="">Bus route</a>
             </div>
         </div>

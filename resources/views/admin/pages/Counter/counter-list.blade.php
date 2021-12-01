@@ -19,9 +19,9 @@
             @foreach ($counters as $key => $counter)
                 <tr>
                     <th>{{ $key + 1 }}</th>
-                    <td>{{ $counter->name }}</td>
+                    <td>{{ $counter->counter_name }}</td>
                     <td>{{ $counter->counter_no }}</td>
-                    <td>{{ $counter->phone }}</td>
+                    <td>{{ $counter->counter_phone }}</td>
                 </tr>
             @endforeach
         </tbody>

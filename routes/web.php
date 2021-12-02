@@ -1,6 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
+// Frontend
+// use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\GalleryController;
+
+// Backend
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\PassengersController;
 use App\Http\Controllers\Backend\DriverController;
@@ -24,7 +30,10 @@ use App\Http\Controllers\Backend\BusRouteController;
 //     return view('frontend.index');
 // });
 
-//for Admin
+// Frontend
+Route::get('/gallery',[GalleryController::class,'gallery']);
+
+// for Admin
 Route::get('/', function () {
     return view('admin.master');
 });

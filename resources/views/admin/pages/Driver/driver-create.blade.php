@@ -38,8 +38,8 @@
         <input required name="bus name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
     </div>
     <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Enter Bus Number</label>
-        <input required name="bus number" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <label for="exampleInputEmail1" class="form-label">Enter Bus No</label>
+        <input required name="bus no" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
     </form>

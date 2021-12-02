@@ -6,6 +6,7 @@ use App\Http\Controllers\Backend\PassengersController;
 use App\Http\Controllers\Backend\DriverController;
 use App\Http\Controllers\Backend\CounterController;
 use App\Http\Controllers\Backend\BusController;
+use App\Http\Controllers\Backend\BusRouteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,17 +20,17 @@ use App\Http\Controllers\Backend\BusController;
 */
 
 //for User
-Route::get('/', function () {
-    return view('frontend.index');
-});
-
-//for Admin
 // Route::get('/', function () {
-//     return view('admin.master');
+//     return view('frontend.index');
 // });
 
+//for Admin
+Route::get('/', function () {
+    return view('admin.master');
+});
+
 //Dashboard
-// Route::get ('/admin/dashboard',[AdminController::class,'dashboard'])->name('admin.dashboard');
+Route::get ('/admin/dashboard',[AdminController::class,'dashboard'])->name('admin.dashboard');
 
 // Passengers
 Route::get('/passengers/list', [PassengersController::class, 'list'])->name('admin.passengers');
@@ -50,3 +51,8 @@ Route::post('/counter/store', [CounterController::class, 'store'])->name('admin.
 Route::get('/bus/list', [BusController::class, 'list'])->name('admin.bus');
 Route::get('/bus/create', [BusController::class, 'create'])->name('admin.bus.create');
 Route::post('/bus/store', [BusController::class, 'store'])->name('admin.bus.store');
+
+// BusRoute
+Route::get('/busroute/list', [BusRouteController::class, 'list'])->name('admin.busroute');
+Route::get('/busroute/create', [BusRouteController::class, 'create'])->name('admin.busroute.create');
+Route::post('/busroute/store', [BusRouteController::class, 'store'])->name('admin.busroute.store');

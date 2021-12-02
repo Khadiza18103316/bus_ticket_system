@@ -24,7 +24,7 @@ class DriverController extends Controller
       'id'=>'required|numeric',
       'phone'=>'required|numeric|digits:11',
       'bus_name'=>'required',
-      'bus_number'=>'required',
+      'bus_no'=>'required|numeric',
   ]);
    Driver::create ([
             // field name for DB || field name for form
@@ -32,7 +32,7 @@ class DriverController extends Controller
             'driver_id'=>$request->id,
             'driver_phone_number'=>$request->phone,
             'bus_name'=>$request->bus_name,
-            'bus_number'=>$request->bus_number,
+            'bus_no'=>$request->bus_no,
 ]);
 return redirect()->back()->with('msg','Driver created successfully!');
 }

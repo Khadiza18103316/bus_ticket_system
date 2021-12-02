@@ -14,7 +14,7 @@
                 <th scope="col">driver_id</th>
                 <th scope="col">driver_phone_number</th>
                 <th scope="col">bus_name</th>
-                <th scope="col">bus_number</th>
+                <th scope="col">bus_no</th>
             </tr>
         </thead>
         <tbody>
@@ -25,7 +25,7 @@
                     <td>{{ $driver->driver_id }}</td>
                     <td>{{ $driver->driver_phone_number }}</td>
                     <td>{{ $driver->bus_name }}</td>
-                    <td>{{ $driver->bus_number }}</td>
+                    <td>{{ $driver->bus_no }}</td>
                 </tr>
             @endforeach
         </tbody>

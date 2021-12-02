@@ -30,7 +30,7 @@
         </div>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Enter Bus Type</label>
-            <select class="form-control" required name="bus_type">
+            <select class="form-control" required name="bus type">
                 <option value=""></option>
                 <option value="AC Bus">AC Bus</option>
                 <option value="Non AC Bus">Non AC Bus</option>

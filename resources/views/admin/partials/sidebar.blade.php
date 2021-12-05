@@ -6,7 +6,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-bus"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Bus Booking</div>
+        <div class="sidebar-brand-text mx-3">Bus Reservation</div>
     </a>
 
     <!-- Divider -->
@@ -41,13 +41,39 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Bus Components:</h6>
-                <a class="collapse-item" href="{{route('admin.driver')}}">Driver</a>
+                <a class="collapse-item" href="{{route('admin.location')}}">Location</a>
                 <a class="collapse-item" href="{{route('admin.counter')}}">Counter</a>
+                <a class="collapse-item" href="{{route('admin.driver')}}">Driver</a>
                 <a class="collapse-item" href="{{route('admin.bus')}}">Bus</a>
                 <a class="collapse-item" href="{{route('admin.busroute')}}">Bus route</a>
             </div>
         </div>
     </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <li class="nav-item active">
+        <a class="nav-link" href="{{route('admin.seat')}}">
+            <i class="fas fa-bus-alt"></i>
+            <span>Seat</span></a>
+    </li>
+
+    <hr class="sidebar-divider">
+
+    <li class="nav-item active">
+        <a class="nav-link" href="{{route('admin.seatbooking')}}">
+            <i class="fas fa-bus-alt"></i>
+            <span>Seat Booking</span></a>
+    </li>
+
+    {{-- <hr class="sidebar-divider">
+
+    <li class="nav-item active">
+        <a class="nav-link" href="{{url('admin.bus')}}">
+            <i class="fas fa-chair-office"></i>
+            <span>Seat</span></a>
+    </li> --}}
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 

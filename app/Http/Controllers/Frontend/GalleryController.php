@@ -10,7 +10,7 @@ class GalleryController extends Controller
 {
     public function gallery()
     {
-        $buses=Bus::all();
-        return view('frontend.pages.gallery',compact('buses'));
+        // $buses=Bus::all();
+        // return view('frontend.pages.gallery',compact('buses'));
     }
 }

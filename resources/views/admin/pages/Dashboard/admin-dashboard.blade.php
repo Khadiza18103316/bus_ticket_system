@@ -32,7 +32,7 @@
     </div>
   </div>
   <div class="col-sm-4">
-    <div class="card text-dark bg-success mb-2" style="max-width: 30rem;">
+    <div class="card text-dark bg-primary mb-2" style="max-width: 30rem;">
       <div class="card-body">
         <h5 class="card-title">Bus</h5>
         <p class="card-text">35+</p>

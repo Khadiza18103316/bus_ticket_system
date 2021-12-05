@@ -17,7 +17,7 @@
     @endif
 
     <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Enter dhaka city counter name</label>
+        <label for="exampleInputEmail1" class="form-label">Enter counter name</label>
         <select class="form-control" required name="counter name">
             <option value=""></option>
             <option value="Fakirapool, Dhaka">Fakirapool, Dhaka</option>

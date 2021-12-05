@@ -48,10 +48,10 @@
 							<div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.9s">								
 								<form class="form-inline">
 									<div class="form-group">
-										<button type="livedemo" name="Live Demo" class="btn btn-primary btn-lg" required="required">Live Demo</button>
+										{{-- <button type="livedemo" name="Live Demo" class="btn btn-primary btn-lg" required="required">Live Demo</button> --}}
 									</div>
 									<div class="form-group">
-										<button type="getnow" name="Get Now" class="btn btn-primary btn-lg" required="required">Get Now</button>
+										{{-- <button type="getnow" name="Get Now" class="btn btn-primary btn-lg" required="required">Get Now</button> --}}
 									</div>
 								</form>
 							</div>
@@ -70,10 +70,10 @@
 							<div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="1.6s">								
 								<form class="form-inline">
 									<div class="form-group">
-										<button type="livedemo" name="purchase" class="btn btn-primary btn-lg" required="required">Live Demo</button>
+										{{-- <button type="livedemo" name="purchase" class="btn btn-primary btn-lg" required="required">Live Demo</button> --}}
 									</div>
 									<div class="form-group">
-										<button type="getnow" name="subscribe" class="btn btn-primary btn-lg" required="required">Get Now</button>
+										{{-- <button type="getnow" name="subscribe" class="btn btn-primary btn-lg" required="required">Get Now</button> --}}
 									</div>
 								</form>
 							</div>
@@ -91,10 +91,10 @@
 							<div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.9s">								
 								<form class="form-inline">
 									<div class="form-group">
-										<button type="livedemo" name="purchase" class="btn btn-primary btn-lg" required="required">Live Demo</button>
+										{{-- <button type="livedemo" name="purchase" class="btn btn-primary btn-lg" required="required">Live Demo</button> --}}
 									</div>
 									<div class="form-group">
-										<button type="getnow" name="subscribe" class="btn btn-primary btn-lg" required="required">Get Now</button>
+										{{-- <button type="getnow" name="subscribe" class="btn btn-primary btn-lg" required="required">Get Now</button> --}}
 									</div>
 								</form>
 							</div>
@@ -344,7 +344,7 @@
 	<script src="{{url('frontend/js/parallax.min.js')}}"></script>
 	<script src="{{url('frontend/js/wow.min.js')}}"></script>
 	<script src="{{url('frontend/js/jquery.easing.min.js')}}"></script>
-	<script type="text/javascript" src="{{url('frontend/js/fliplightbox.min.js')}}"></script>
+	<script type="{{url('text/javascript')}}" src="{{url('frontend/js/fliplightbox.min.js')}}"></script>
 	<script src="{{url('frontend/js/functions.js')}}"></script>
     <script src="{{url('frontend/contactform/contactform.js')}}"></script>
     

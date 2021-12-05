@@ -18,10 +18,11 @@ class BusRouteController extends Controller
       }
       public function store(Request $request){
          $request->validate([
-            'bus_name'=>'required',
             'bus_no'=>'required|numeric',
             'bus_type'=>'required',
-            'bus_route_time'=>'required|time',
+            'location_from'=>'required',
+            'location_to'=>'required',
+            'bus_route_time'=>'required',
             'bus_route_date'=>'required|date',
             'bus_departure_from'=>'required',
             'bus_departure_to'=>'required',
@@ -29,13 +30,16 @@ class BusRouteController extends Controller
                //  dd($request);
          BusRoute::create ([
                   // field name for DB || field name for form
-                  'bus_name'=>$request->bus_name,
                   'bus_no'=>$request->bus_no,
                   'bus_type'=>$request->bus_type,
+                  'location_from'=>$request->location_from,
+                  'location_to'=>$request->location_to,
                   'bus_route_time'=>$request->bus_route_time,
                   'bus_route_date'=>$request->bus_route_date,
                   'bus_departure_from'=>$request->bus_departure_from,
                   'bus_departure_to'=>$request->bus_departure_to,
       ]);
+      return redirect()->back()->with('msg','Bus route created successfully!');
+
 }
 }

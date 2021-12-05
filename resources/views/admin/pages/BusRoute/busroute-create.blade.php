@@ -5,11 +5,18 @@
 
     <form action="{{route('admin.busroute.store')}}" method="POST">@csrf
 
-    <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Enter Bus Name</label>
-        <input required name="bus name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    </div>
-
+        @if ($errors->any())
+        @foreach ($errors->all() as $error)
+            <div>
+                <p class="alert alert-danger">{{$error}}</p>
+            </div>
+        @endforeach
+    @endif
+    
+    @if(session()->has('msg'))
+        <p class="alert alert-success">{{session()->get('msg')}}</p>
+    @endif
+    
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Enter Bus No</label>
         <input required name="bus no" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -25,9 +32,42 @@
     </div>
 
     <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Enter Bus Route Time</label>
-        <input required name="bus route time" type="time" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <label for="exampleInputEmail1" class="form-label">Enter Location From</label>
+        <select class="form-control" required name="location from">
+            <option value=""></option>
+            <option value="Dhaka">Dhaka</option>
+            <option value="Khulna">Khulna</option>
+            <option value="Jessore">Jessore</option>
+            <option value="Satkhira">Satkhira</option>
+            <option value="Mymenshingh">Mymenshingh</option>
+            <option value="Chittagong">Chittagong</option>
+            <option value="Cox's Bazar">Cox's Bazar</option>
+        </select>
+    </div>
 
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Enter Location To</label>
+        <select class="form-control" required name="location to">
+            <option value=""></option>
+            <option value="Dhaka">Dhaka</option>
+            <option value="Khulna">Khulna</option>
+            <option value="Jessore">Jessore</option>
+            <option value="Satkhira">Satkhira</option>
+            <option value="Mymenshingh">Mymenshingh</option>
+            <option value="Chittagong">Chittagong</option>
+            <option value="Cox's Bazar">Cox's Bazar</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Enter Bus Route Time</label>
+        <label for="exampleInputEmail1" class="form-label">Enter Bus Type</label>
+        <select class="form-control" required name="bus route time">
+            <option value="">Time Period</option>
+            <option value="Morning (05:00AM-11:59AM)">Morning (05:00AM-11:59AM)</option>
+            <option value="Afternoon (12:00PM-05:59PM)">Afternoon (12:00PM-05:59PM)</option>
+            <option value="Night (06:00PM-11:59PM)">Night (06:00PM-11:59PM)</option>
+        </select>
     </div>
 
     <div class="mb-3">

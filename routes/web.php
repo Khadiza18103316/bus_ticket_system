@@ -3,8 +3,8 @@
 use Illuminate\Support\Facades\Route;
 
 // Frontend
-// use App\Http\Controllers\Frontend\HomeController;
-use App\Http\Controllers\Frontend\GalleryController;
+use App\Http\Controllers\Frontend\HomeController;
+// use App\Http\Controllers\Frontend\GalleryController;
 
 // Backend
 use App\Http\Controllers\Backend\AdminController;
@@ -13,6 +13,8 @@ use App\Http\Controllers\Backend\DriverController;
 use App\Http\Controllers\Backend\CounterController;
 use App\Http\Controllers\Backend\BusController;
 use App\Http\Controllers\Backend\BusRouteController;
+use App\Http\Controllers\Backend\SeatController;
+use App\Http\Controllers\Backend\LocationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +33,7 @@ use App\Http\Controllers\Backend\BusRouteController;
 // });
 
 // Frontend
-Route::get('/gallery',[GalleryController::class,'gallery']);
+Route::get('/home',[HomeController::class,'home']);
 
 // for Admin
 Route::get('/', function () {
@@ -45,6 +47,11 @@ Route::get ('/admin/dashboard',[AdminController::class,'dashboard'])->name('admi
 Route::get('/passengers/list', [PassengersController::class, 'list'])->name('admin.passengers');
 Route::get('/passengers/create', [PassengersController::class, 'create'])->name('admin.passengers.create');
 Route::post('/passengers/store', [PassengersController::class, 'store'])->name('admin.passengers.store');
+
+// Location
+Route::get('/location/list', [LocationController::class, 'list'])->name('admin.location');
+Route::get('/location/create', [LocationController::class, 'create'])->name('admin.location.create');
+Route::post('/location/store', [LocationController::class, 'store'])->name('admin.location.store');
 
 // Driver
 Route::get('/driver/list', [DriverController::class, 'list'])->name('admin.driver');
@@ -65,3 +72,13 @@ Route::post('/bus/store', [BusController::class, 'store'])->name('admin.bus.stor
 Route::get('/busroute/list', [BusRouteController::class, 'list'])->name('admin.busroute');
 Route::get('/busroute/create', [BusRouteController::class, 'create'])->name('admin.busroute.create');
 Route::post('/busroute/store', [BusRouteController::class, 'store'])->name('admin.busroute.store');
+
+// Seat
+Route::get('/seat/list', [SeatController::class, 'list'])->name('admin.seat');
+Route::get('/seat/create', [SeatController::class, 'create'])->name('admin.seat.create');
+// Route::post('/seat/store', [SeatController::class, 'store'])->name('admin.seat.store');
+
+// Seat Booking
+Route::get('/seat booking/list', [SeatBookingController::class, 'list'])->name('admin.seatbooking');
+Route::get('/seat booking/create', [SeatBookingController::class, 'create'])->name('admin.seatbooking.create');
+// Route::post('/seat/store', [SeatController::class, 'store'])->name('admin.seat.store');

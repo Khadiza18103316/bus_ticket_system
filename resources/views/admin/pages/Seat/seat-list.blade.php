@@ -15,18 +15,15 @@
                 <th scope="col">seat_bus_no</th>
             </tr>
         </thead>
-        {{-- <tbody>
-            @foreach ($buses as $key => $bus)
+        <tbody>
+            @foreach ($seats as $key => $seat)
                 <tr>
                     <th>{{ $key + 1 }}</th>
-                    <td>{{ $bus->bus_name }}</td>
-                    <td>
-                        <img src="{{url('/uploads/'.$bus->image)}}" width="100px" alt="">
-                    </td>
-                    <td>{{ $bus->bus_no }}</td>
-                    <td>{{ $bus->bus_type }}</td>
+                    <td>{{ $seat->seat_no}}</td>
+                    <td>{{ $seat->seat_type}}</td>
+                    <td>{{ $seat->seat_bus_no}}</td>
                 </tr>
             @endforeach
-        </tbody> --}}
+        </tbody>
     </table>
 @endsection

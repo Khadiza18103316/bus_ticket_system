@@ -14,6 +14,7 @@
                 <th scope="col">image</th>
                 <th scope="col">bus_no</th>
                 <th scope="col">bus_type</th>
+                <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -26,6 +27,13 @@
                     </td>
                     <td>{{ $bus->bus_no }}</td>
                     <td>{{ $bus->bus_type }}</td>
+
+                    <td>
+                        <a class="btn btn-primary" href="{{route('admin.bus.view', $bus->id)}}">View</a>
+                        <a class="btn btn-info" href="">Edit</a>
+                        <a class="btn btn-danger" href="{{route('admin.bus.delete', $bus->id)}}">Delete</a>
+                  </td>
+
                 </tr>
             @endforeach
         </tbody>

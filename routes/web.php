@@ -4,11 +4,11 @@ use Illuminate\Support\Facades\Route;
 
 // Frontend
 use App\Http\Controllers\Frontend\HomeController;
-// use App\Http\Controllers\Frontend\GalleryController;
+use App\Http\Controllers\Frontend\LoginController;
 
 // Backend
 use App\Http\Controllers\Backend\AdminController;
-use App\Http\Controllers\Backend\PassengersController;
+use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\DriverController;
 use App\Http\Controllers\Backend\CounterController;
 use App\Http\Controllers\Backend\BusController;
@@ -30,10 +30,15 @@ use App\Http\Controllers\Backend\LocationController;
 //for User
 // Route::get('/', function () {
 //     return view('frontend.index');
-// });
+// });                                                                             
 
 // Frontend
-Route::get('/home',[HomeController::class,'home']);
+Route::get('/home',[HomeController::class,'home'])->name('frontend.home');
+Route::get('/user/registration',[LoginController::class,'registration'])->name('user.registration');
+Route::post('/user/registration/post',[LoginController::class,'registrationPost'])->name('user.registration.post');
+Route::get('/user/login',[LoginController::class,'login'])->name('user.login');
+Route::post('/user/do/login',[LoginController::class,'doLogin'])->name('user.do.login');
+Route::get('/user/logout',[LoginController::class,'logout'])->name('user.logout');
 
 // for Admin
 Route::get('/', function () {
@@ -43,10 +48,8 @@ Route::get('/', function () {
 //Dashboard
 Route::get ('/admin/dashboard',[AdminController::class,'dashboard'])->name('admin.dashboard');
 
-// Passengers
-Route::get('/passengers/list', [PassengersController::class, 'list'])->name('admin.passengers');
-Route::get('/passengers/create', [PassengersController::class, 'create'])->name('admin.passengers.create');
-Route::post('/passengers/store', [PassengersController::class, 'store'])->name('admin.passengers.store');
+// User
+Route::get('/user/list', [UserController::class, 'list'])->name('admin.user');
 
 // Location
 Route::get('/location/list', [LocationController::class, 'list'])->name('admin.location');
@@ -65,6 +68,8 @@ Route::post('/counter/store', [CounterController::class, 'store'])->name('admin.
 
 // Bus
 Route::get('/bus/list', [BusController::class, 'list'])->name('admin.bus');
+Route::get('/bus/view/{bus_id}',[BusController::class, 'busView'])->name('admin.bus.view');
+Route::get('/bus/delete/{bus_id}',[BusController::class, 'busDelete'])->name('admin.bus.delete');
 Route::get('/bus/create', [BusController::class, 'create'])->name('admin.bus.create');
 Route::post('/bus/store', [BusController::class, 'store'])->name('admin.bus.store');
 
@@ -76,7 +81,7 @@ Route::post('/busroute/store', [BusRouteController::class, 'store'])->name('admi
 // Seat
 Route::get('/seat/list', [SeatController::class, 'list'])->name('admin.seat');
 Route::get('/seat/create', [SeatController::class, 'create'])->name('admin.seat.create');
-// Route::post('/seat/store', [SeatController::class, 'store'])->name('admin.seat.store');
+Route::post('/seat/store', [SeatController::class, 'store'])->name('admin.seat.store');
 
 // Seat Booking
 Route::get('/seat booking/list', [SeatBookingController::class, 'list'])->name('admin.seatbooking');

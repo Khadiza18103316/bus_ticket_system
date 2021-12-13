@@ -11,7 +11,6 @@
 
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
-
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
         <a class="nav-link" href="{{route('admin.dashboard')}}">
@@ -21,9 +20,8 @@
 
     <!-- Divider -->
     <hr class="sidebar-divider">
-
     <li class="nav-item active">
-        <a class="nav-link" href="{{route('admin.passengers')}}">
+        <a class="nav-link" href="{{route('admin.user')}}">
             <i class="fas fa-users"></i>
             <span>Passengers</span></a>
     </li>
@@ -32,7 +30,7 @@
  <hr class="sidebar-divider">
     <!-- Nav Item - Pages Collapse Menu -->
     
-    <li class="nav-item">
+    <li class="nav-item active">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
             aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-bus-alt"></i>
@@ -52,28 +50,20 @@
 
     <!-- Divider -->
     <hr class="sidebar-divider">
-
     <li class="nav-item active">
         <a class="nav-link" href="{{route('admin.seat')}}">
-            <i class="fas fa-bus-alt"></i>
+            <i class="fas fa-chair-office"></i>
             <span>Seat</span></a>
     </li>
 
+    <!-- Divider -->
     <hr class="sidebar-divider">
-
     <li class="nav-item active">
         <a class="nav-link" href="{{route('admin.seatbooking')}}">
-            <i class="fas fa-bus-alt"></i>
+            <i class="fas fa-chair-office"></i>
             <span>Seat Booking</span></a>
     </li>
 
-    {{-- <hr class="sidebar-divider">
-
-    <li class="nav-item active">
-        <a class="nav-link" href="{{url('admin.bus')}}">
-            <i class="fas fa-chair-office"></i>
-            <span>Seat</span></a>
-    </li> --}}
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 

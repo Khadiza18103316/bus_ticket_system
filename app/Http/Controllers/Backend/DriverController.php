@@ -36,5 +36,16 @@ class DriverController extends Controller
 ]);
 return redirect()->back()->with('msg','Driver created successfully!');
 }
+public function driverDetails($driver_id){
+   $driver=Driver::find($driver_id);
+   return view ('admin.pages.Driver.driver-details',compact('driver'));
+ }
+
+public function driverDelete($driver_id){
+
+Driver::find($driver_id)->delete();
+
+return redirect()->back()->with('success','driver Deleted.');
+}
 }
 

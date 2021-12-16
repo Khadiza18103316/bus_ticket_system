@@ -23,6 +23,7 @@ class CreateBusroutesTable extends Migration
             $table->date('bus_route_date');
             $table->string('bus_departure_from');
             $table->string('bus_departure_to');
+            $table->integer('bus_fare');
             $table->timestamps();
         });
     }

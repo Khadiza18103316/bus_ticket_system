@@ -10,8 +10,9 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">from_location</th>
-                <th scope="col">to_location</th>
+                <th scope="col">From Location</th>
+                <th scope="col">To Location</th>
+                <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -20,6 +21,11 @@
                     <th>{{ $key + 1 }}</th>
                     <td>{{ $location->location_from}}</td>
                     <td>{{ $location->location_to}}</td>
+                    <td>
+                        <a class="btn btn-primary" href="{{route('admin.location.details',$location->id)}}"><i class="fas fa-eye"></i></a>
+                        <a class="btn btn-info" href=""><i class="fas fa-edit"></i></a>
+                        <a class="btn btn-danger" href="{{route('admin.location.delete',$location->id)}}"><i class="fas fa-trash-alt"></i></a>
+                  </td>
                 </tr>
             @endforeach
         </tbody>

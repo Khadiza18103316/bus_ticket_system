@@ -65,7 +65,7 @@
     </div>						
     <div class="text-center">
         <div class="copyright">
-            &copy; BUS BOOKINg Theme. All Rights Reserved.
+            &copy; BUS BOOKING Theme. All Rights Reserved.
             <div class="credits">
                 <!-- 
                     All the links in the footer should remain intact. 

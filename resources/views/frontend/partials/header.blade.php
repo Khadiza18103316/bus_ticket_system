@@ -13,9 +13,9 @@
             <div class="collapse navbar-collapse navbar-right">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#header">Home</a></li>
-                    <li><a href="#feature">Feature</a></li>
+                    <li><a href="{{route('frontend.booking')}}">Booking</a></li>
                     <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#our-team">Locations</a></li> 
+                    <li><a href="#location">Locations</a></li> 
                     <li><a href="#contact">Contact</a></li>
 
                     @if(auth()->user())

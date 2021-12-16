@@ -32,4 +32,15 @@ class LocationController extends Controller
    return redirect()->back()->with('msg','Location created successfully!');
 
 }
+public function locationDetails($location_id){
+   $location=Location::find($location_id);
+   return view ('admin.pages.Location.location-details',compact('location'));
+ }
+
+public function locationDelete($location_id){
+
+Location::find($location_id)->delete();
+
+return redirect()->back()->with('success','Location Deleted.');
+}
 }

@@ -33,4 +33,15 @@ Counter::create ([
 ]);
 return redirect()->back()->with('msg','Counter created successfully!');
 }
+public function counterDetails($counter_id){
+   $counter=Counter::find($counter_id);
+   return view ('admin.pages.Counter.counter-details',compact('counter'));
+ }
+
+public function counterDelete($counter_id){
+
+Counter::find($counter_id)->delete();
+
+return redirect()->back()->with('success','counter Deleted.');
+}
 }

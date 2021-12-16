@@ -34,4 +34,15 @@ class SeatController extends Controller
       ]);
       return redirect()->back()->with('msg','Seat created successfully!');
 }
+public function seatDetails($seat_id){
+   $seat=Seat::find($seat_id);
+   return view ('admin.pages.Seat.seat-details',compact('seat'));
+ }
+
+public function seatDelete($seat_id){
+
+Seat::find($seat_id)->delete();
+
+return redirect()->back()->with('success','Seat Deleted.');
+}
 }

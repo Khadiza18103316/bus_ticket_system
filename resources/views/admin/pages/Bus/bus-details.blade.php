@@ -1,13 +1,13 @@
 @extends('admin.master')
 @section('content')
 
-<h3> Bus View </h3>
+<h3> Bus Details </h3>
 
 <p>                        
     <img src="{{url('/uploads/'.$bus->image)}}" width="100px" alt="">
 </p>
-<p>bus_name:{{$bus->bus_name}} </p>
-<p>bus_no:{{$bus->bus_no}} </p>
-<p>bus_type:{{$bus->bus_type}} </p>
+<p>Bus Name:{{$bus->bus_name}} </p>
+<p>Bus No:{{$bus->bus_no}} </p>
+<p>Bus Type:{{$bus->bus_type}} </p>
 
 @endsection

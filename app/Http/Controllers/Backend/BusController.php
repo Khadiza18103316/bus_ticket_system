@@ -44,7 +44,7 @@ class BusController extends Controller
 ]);
 return redirect()->back()->with('msg','Bus created successfully!');
 }
-    public function busView($bus_id){
+    public function busDetails($bus_id){
     $bus=Bus::find($bus_id);
     return view ('admin.pages.Bus.bus-details',compact('bus'));
   }

@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Backend\AdminLoginController  as AdminUserController;
+
 // Frontend
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\LoginController;
@@ -39,15 +41,24 @@ Route::get('/user/logout',[LoginController::class,'logout'])->name('user.logout'
 // Booking
 Route::get('/booking',[BookingController::class,'booking'])->name('frontend.booking');
 
-//for Admin
-Route::get('/', function () {
-    return view('admin.master');
-});
+//For Admin
+Route::group(['prefix'=>'admin'],function(){
+
+// Admin Login
+Route::get('/admin/login',[AdminUserController::class, 'login'])->name('admin.login');
+Route::post('/admin/login',[AdminUserController::class, 'doLogin'])->name('admin.doLogin');
+
+Route::group(['middleware'=>'auth'],function (){
+    Route::get('/admin', function () {
+        return view('admin.pages.Dashboard.admin-dashboard');
+    })->name('admin.dashboard');
+
+    Route::get('/admin/logout',[AdminUserController::class,'logout'])->name('admin.logout');
 
 //Dashboard
 Route::get ('/admin/dashboard',[AdminController::class,'dashboard'])->name('admin.dashboard');
 
-// User
+// Passenger List
 Route::get('/user/list', [UserController::class, 'list'])->name('admin.user');
 
 // Location
@@ -96,3 +107,5 @@ Route::post('/seat/store', [SeatController::class, 'store'])->name('admin.seat.s
 Route::get('/seat booking/list', [SeatBookingController::class, 'list'])->name('admin.seatbooking');
 Route::get('/seat booking/create', [SeatBookingController::class, 'create'])->name('admin.seatbooking.create');
 // Route::post('/seat/store', [SeatController::class, 'store'])->name('admin.seat.store');
+});
+});

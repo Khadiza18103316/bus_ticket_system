@@ -2,6 +2,12 @@
 @section('content')
 
     <h3>Bus Route list</h3>
+    
+    @if(session()->has('success'))
+    <p class="alert alert-success">
+        {{session()->get('success')}}
+    </p>
+@endif
 
     <a href="{{ route('admin.busroute.create') }}" class="btn btn-success">Add Bus Route</a>
 

@@ -61,7 +61,6 @@
 
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Enter Bus Route Time</label>
-        <label for="exampleInputEmail1" class="form-label">Enter Bus Type</label>
         <select class="form-control" required name="bus route time">
             <option value="">Time Period</option>
             <option value="Morning (05:00AM-11:59AM)">Morning (05:00AM-11:59AM)</option>

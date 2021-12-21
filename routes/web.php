@@ -45,18 +45,18 @@ Route::get('/booking',[BookingController::class,'booking'])->name('frontend.book
 Route::group(['prefix'=>'admin'],function(){
 
 // Admin Login
-Route::get('/admin/login',[AdminUserController::class, 'login'])->name('admin.login');
-Route::post('/admin/login',[AdminUserController::class, 'doLogin'])->name('admin.doLogin');
+Route::get('/login',[AdminUserController::class, 'login'])->name('admin.login');
+Route::post('/login',[AdminUserController::class, 'doLogin'])->name('admin.doLogin');
 
 Route::group(['middleware'=>'auth'],function (){
-    Route::get('/admin', function () {
+    Route::get('/', function () {
         return view('admin.pages.Dashboard.admin-dashboard');
     })->name('admin.dashboard');
 
-    Route::get('/admin/logout',[AdminUserController::class,'logout'])->name('admin.logout');
+    Route::get('/logout',[AdminUserController::class,'logout'])->name('admin.logout');
 
 //Dashboard
-Route::get ('/admin/dashboard',[AdminController::class,'dashboard'])->name('admin.dashboard');
+Route::get ('/dashboard',[AdminController::class,'dashboard'])->name('admin.dashboard');
 
 // Passenger List
 Route::get('/user/list', [UserController::class, 'list'])->name('admin.user');
@@ -98,8 +98,10 @@ Route::post('/busroute/store', [BusRouteController::class, 'store'])->name('admi
 
 // Seat
 Route::get('/seat/list', [SeatController::class, 'list'])->name('admin.seat');
-Route::get('/seat/view/{seat_id}',[SeatController::class, 'seatDetails'])->name('admin.seat.details');
-Route::get('/seat/delete/{seat_id}',[SeatController::class, 'seatDelete'])->name('admin.seat.delete');
+Route::get('/seat/view/{id}',[SeatController::class, 'seatDetails'])->name('admin.seat.details');
+Route::get('/seat/edit/{id}',[SeatController::class,'SeatEdit'])->name('admin.seat.edit');
+Route::put('/seat/update/{id}',[SeatController::class,'SeatUpdate'])->name('admin.seat.update');
+Route::get('/seat/delete/{id}',[SeatController::class, 'seatDelete'])->name('admin.seat.delete');
 Route::get('/seat/create', [SeatController::class, 'create'])->name('admin.seat.create');
 Route::post('/seat/store', [SeatController::class, 'store'])->name('admin.seat.store');
 

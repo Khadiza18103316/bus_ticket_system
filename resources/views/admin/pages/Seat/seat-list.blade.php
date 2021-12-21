@@ -26,7 +26,7 @@
                     <td>{{ $seat->seat_bus_no}}</td>
                     <td>
                         <a class="btn btn-primary" href="{{route('admin.seat.details',$seat->id)}}"><i class="fas fa-eye"></i></a>
-                        <a class="btn btn-info" href=""><i class="fas fa-edit"></i></a>
+                        <a class="btn btn-info" href="{{route('admin.seat.edit',$seat->id)}}"><i class="fas fa-edit"></i></a>
                         <a class="btn btn-danger" href="{{route('admin.seat.delete',$seat->id)}}"><i class="fas fa-trash-alt"></i></a>
                   </td>
                 </tr>

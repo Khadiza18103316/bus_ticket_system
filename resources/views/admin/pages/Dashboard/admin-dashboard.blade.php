@@ -14,7 +14,7 @@
 <div class="col-sm-4">
     <div class="card text-dark bg-info mb-2" style="max-width: 30rem;">
       <div class="card-body">
-        <h5 class="card-title" >Passengers Details</h5>
+        <h5 class="card-title" >Passenger Details</h5>
         <p class="card-text">9K+</p>
         <a href="{{route('admin.user')}}" class="btn btn-primary">Show More</a>
       </div>
@@ -40,41 +40,13 @@
     </div>
   </div>
   <div class="col-sm-4">
-    <div class="card text-dark bg-primary mb-2" style="max-width: 30rem;">
+    <div class="card text-dark bg-info mb-2" style="max-width: 30rem;">
       <div class="card-body">
-        <h5 class="card-title">Bus</h5>
+        <h5 class="card-title">Bus Details</h5>
         <p class="card-text">35+</p>
         <a href="{{route('admin.bus')}}" class="btn btn-primary">Show More</a>
       </div>
     </div>
   </div>
-  {{-- <div class="col-sm-4">
-    <div class="card text-white bg-danger mb-3" style="max-width: 30rem;">
-      <div class="card-body">
-        <h5 class="card-title">Booking Info</h5>
-        <p class="card-text">125</p>
-        <a href="{{route('admin.booking')}}" class="btn btn-primary">Read More</a>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-4">
-    <div class="card text-white bg-info mb-3" style="max-width: 30rem;">
-      <div class="card-body">
-        <h5 class="card-title" >Payment Details</h5>
-        <p class="card-text">15K+</p>
-        <a href="{{route('admin.payment')}}" class="btn btn-primary">Read More</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-sm-4">
-    <div class="card text-white bg-primary mb-3" style="max-width: 30rem;">
-      <div class="card-body">
-        <h5 class="card-title" >Report</h5>
-        <p >15K+</p>
-        <a href="{{route('admin.report')}}" class="btn btn-danger">Read More</a>
-      </div>
-    </div>
-  </div> --}}
 </div>
 @endsection

@@ -21,7 +21,7 @@
         @method('put')
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Enter Seat No</label>
-            <input required name="seat no" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input value="{{$seat->seat_no}}" required name="seat no" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
         </div>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Enter Seat Type</label>
@@ -33,7 +33,7 @@
         </div>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Enter Seat Bus No</label>
-            <input required name="seat bus no" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input value={{$seat->seat_bus_no}} required name="seat bus no" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

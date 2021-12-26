@@ -30,7 +30,28 @@ class LocationController extends Controller
                'location_to'=>$request->location_to,
    ]);
    return redirect()->back()->with('msg','Location created successfully!');
-
+}
+public function locationEdit($id){
+   // dd($id);
+   $location = Location::find($id);
+   // dd($location);          
+   // $locations = Location::all();
+   if ($location) {
+       return view('admin.pages.Location.location-edit',compact('location'));
+   }
+}
+public function locationUpdate(Request $request,$id){
+   // dd($request->all());
+   // dd($id);
+   $location = Location::find($id);
+   // dd($location);
+   if ($location) {
+       $location->update([
+         'location_from'=>$request->location_from,
+         'location_to'=>$request->location_to,
+       ]);
+       return redirect()->route('admin.location')->with('success','Location updated!');
+   }
 }
 public function locationDetails($location_id){
    $location=Location::find($location_id);
@@ -40,7 +61,6 @@ public function locationDetails($location_id){
 public function locationDelete($location_id){
 
 Location::find($location_id)->delete();
-
-return redirect()->back()->with('success','Location Deleted.');
+return redirect()->route('admin.location')->with('msg','Location Deleted.');
 }
 }

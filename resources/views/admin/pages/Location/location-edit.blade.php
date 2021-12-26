@@ -2,23 +2,23 @@
 
 @section('content')
 
-    <h3>Add location</h3>
+    <h3>Update location</h3>
 
     @if ($errors->any())
     @foreach ($errors->all() as $error)
         <div>
-            <p class="alert alert-danger">{{$error}}</p>
+            <p class="alert alert-success">{{$error}}</p>
         </div>
     @endforeach
 @endif
-
 @if(session()->has('msg'))
     <p class="alert alert-success">{{session()->get('msg')}}</p>
 @endif
 
-        <form action="{{route('admin.location.store')}}" method="POST">
+    <form action="{{route('admin.location.update',$location->id)}}" method="POST">
         @csrf
-        
+        @method('put')
+
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Enter Location From</label>
             <select class="form-control" required name="location from">

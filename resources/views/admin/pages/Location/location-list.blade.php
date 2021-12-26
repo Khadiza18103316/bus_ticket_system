@@ -3,6 +3,15 @@
 
     <h3>Location list</h3>
 
+
+@if(session()->has('msg'))
+    <p class="alert alert-danger">{{session()->get('msg')}}</p>
+@endif 
+
+@if(session()->has('success'))
+    <p class="alert alert-success">{{session()->get('success')}}</p>
+@endif 
+
     <a href="{{route('admin.location.create')}}" class="btn btn-success">Add location</a>
 <br>
 <br>
@@ -23,7 +32,7 @@
                     <td>{{ $location->location_to}}</td>
                     <td>
                         <a class="btn btn-primary" href="{{route('admin.location.details',$location->id)}}"><i class="fas fa-eye"></i></a>
-                        <a class="btn btn-info" href=""><i class="fas fa-edit"></i></a>
+                        <a class="btn btn-info" href="{{route('admin.location.edit',$location->id)}}"><i class="fas fa-edit"></i></a>
                         <a class="btn btn-danger" href="{{route('admin.location.delete',$location->id)}}"><i class="fas fa-trash-alt"></i></a>
                   </td>
                 </tr>

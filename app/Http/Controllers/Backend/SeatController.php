@@ -49,10 +49,9 @@ public function seatUpdate(Request $request,$id){
    // dd($request->all());
    // dd($id);
    $seat = Seat::find($id);
-   // dd($product);
+   // dd($seat);
    if ($seat) {
        $seat->update([
-       // 'name'=>$request->name,
        'seat_no'=>$request->seat_no,
          'seat_type'=>$request->seat_type,    
          'seat_bus_no'=>$request->seat_bus_no,

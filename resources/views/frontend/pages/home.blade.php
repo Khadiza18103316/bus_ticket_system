@@ -3,19 +3,15 @@
 <div id="gallery">
     <div class="container">
         <div class="text-center">
-            <h3>Gallery</h3>
-            <p>BUSES For<br>Our Customer</p>
+            <h3>Bus List</h3>
+            <p>BUSES For<br>Our Passenger</p>
         </div>
         <div class="row">
-            <figure class="effect-chico">
-                <div class="col-md-3 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
                     @foreach ($buses as $bus)
                     <a href="{{url('/uploads/'.$bus->image)}}"class="flipLightBox" >
-                    <img src="{{url('/uploads/'.$bus->image)}}" class="img-responsive" alt="">
+                        <img src="{{url('/uploads/'.$bus->image)}}" width="280">
                     </a>
                     @endforeach
-                </div>
-            </figure> 	  
         </div>
     </div>
 </div>

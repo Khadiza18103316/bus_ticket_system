@@ -10,6 +10,7 @@ use App\Http\Controllers\Frontend\LoginController;
 use App\Http\Controllers\Frontend\BookingController;
 
 // Backend
+use App\Http\Controllers\Backend\LocationController;
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\DriverController;
@@ -17,7 +18,7 @@ use App\Http\Controllers\Backend\CounterController;
 use App\Http\Controllers\Backend\BusController;
 use App\Http\Controllers\Backend\BusRouteController;
 use App\Http\Controllers\Backend\SeatController;
-use App\Http\Controllers\Backend\LocationController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -65,6 +66,8 @@ Route::get('/user/list', [UserController::class, 'list'])->name('admin.user');
 Route::get('/location/list', [LocationController::class, 'list'])->name('admin.location');
 Route::get('/location/view/{location_id}',[LocationController::class, 'locationDetails'])->name('admin.location.details');
 Route::get('/location/delete/{location_id}',[LocationController::class, 'locationDelete'])->name('admin.location.delete');
+Route::get('/location/edit/{id}',[LocationController::class,'locationEdit'])->name('admin.location.edit');
+Route::put('/location/update/{id}',[LocationController::class,'locationUpdate'])->name('admin.location.update');
 Route::get('/location/create', [LocationController::class, 'create'])->name('admin.location.create');
 Route::post('/location/store', [LocationController::class, 'store'])->name('admin.location.store');
 
@@ -99,8 +102,8 @@ Route::post('/busroute/store', [BusRouteController::class, 'store'])->name('admi
 // Seat
 Route::get('/seat/list', [SeatController::class, 'list'])->name('admin.seat');
 Route::get('/seat/view/{id}',[SeatController::class, 'seatDetails'])->name('admin.seat.details');
-Route::get('/seat/edit/{id}',[SeatController::class,'SeatEdit'])->name('admin.seat.edit');
-Route::put('/seat/update/{id}',[SeatController::class,'SeatUpdate'])->name('admin.seat.update');
+Route::get('/seat/edit/{id}',[SeatController::class,'seatEdit'])->name('admin.seat.edit');
+Route::put('/seat/update/{id}',[SeatController::class,'seatUpdate'])->name('admin.seat.update');
 Route::get('/seat/delete/{id}',[SeatController::class, 'seatDelete'])->name('admin.seat.delete');
 Route::get('/seat/create', [SeatController::class, 'create'])->name('admin.seat.create');
 Route::post('/seat/store', [SeatController::class, 'store'])->name('admin.seat.store');

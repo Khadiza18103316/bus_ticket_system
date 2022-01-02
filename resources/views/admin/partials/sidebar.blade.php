@@ -59,7 +59,7 @@
     <!-- Divider -->
     <hr class="sidebar-divider">
     <li class="nav-item active">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{route('admin.seatbooking')}}">
             <i class="fas fa-chair-office"></i>
             <span>Seat Booking</span></a>
     </li>

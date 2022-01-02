@@ -55,4 +55,12 @@ Bus::find($bus_id)->delete();
 
 return redirect()->back()->with('success','Bus Deleted.');
 }
+
+public function busSearch(){
+  // dd(request()->all());
+  $key = request()->search;
+  $buses = Bus::where('bus_name','LIKE',"%{$key}%")->get();
+  // dd($products);
+  return view('admin.pages.Bus.search-bus-list',compact('buses'));
+}
 }

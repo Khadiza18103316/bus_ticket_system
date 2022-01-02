@@ -129,6 +129,7 @@
             <option value="Jhautola, Cox’s Bazar">Jhautola, Cox’s Bazar</option>
             <option value="Monihar, Jessore">Monihar, Jessore</option>
             <option value="Benapole Bazar">Benapole Bazar</option>
+            <option value="Mashkanda">Mashkanda</option>
             <option value="Shibbari, Khulna">Shibbari, Khulna</option>
             <option value="Shatkhira Kaliganj Road">Shatkhira Kaliganj Road</option>
         </select>

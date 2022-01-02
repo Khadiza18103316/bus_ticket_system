@@ -2,8 +2,7 @@
 @section('content')
 
     <h3>Seat list</h3>
-
-    <a href="{{ route('admin.seat.create') }}" class="btn btn-success">Add seat</a>
+    <a href="{{ route('admin.seatbooking.create') }}" class="btn btn-success">Add seat</a>
 <br>
 <br>
     <table class="table table-striped">

@@ -21,7 +21,7 @@
     <!-- Divider -->
     <hr class="sidebar-divider">
     <li class="nav-item active">
-        <a class="nav-link" href="{{route('admin.user')}}">
+        <a class="nav-link" href="{{route('passenger')}}">
             <i class="fas fa-users"></i>
             <span>Passengers</span></a>
     </li>

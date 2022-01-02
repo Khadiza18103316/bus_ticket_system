@@ -16,7 +16,7 @@
       <div class="card-body">
         <h5 class="card-title" >Passenger Details</h5>
         <p class="card-text">9K+</p>
-        <a href="{{route('admin.user')}}" class="btn btn-primary">Show More</a>
+        <a href="{{route('passenger')}}" class="btn btn-primary">Show More</a>
       </div>
     </div>
   </div>

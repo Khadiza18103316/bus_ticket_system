@@ -6,7 +6,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-bus"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Bus Reservation</div>
+        <div class="sidebar-brand-text mx-3">Bus Ticket Reservation</div>
     </a>
 
     <!-- Divider -->
@@ -52,16 +52,16 @@
     <hr class="sidebar-divider">
     <li class="nav-item active">
         <a class="nav-link" href="{{route('admin.seat')}}">
-            <i class="fas fa-chair-office"></i>
+            <i class="fas fa-clipboard-list"></i>
             <span>Seat</span></a>
     </li>
 
     <!-- Divider -->
     <hr class="sidebar-divider">
     <li class="nav-item active">
-        <a class="nav-link" href="{{route('admin.seatbooking')}}">
-            <i class="fas fa-chair-office"></i>
-            <span>Seat Booking</span></a>
+        <a class="nav-link" href="{{route('admin.trip')}}">
+            <i class="fas fa-suitcase-rolling"></i>
+            <span>Available Trip</span></a>
     </li>
 
     <!-- Divider -->

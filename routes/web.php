@@ -7,7 +7,7 @@ use App\Http\Controllers\Backend\AdminLoginController  as AdminUserController;
 // Frontend
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\LoginController;
-use App\Http\Controllers\Frontend\BookingController;
+
 
 // Backend
 use App\Http\Controllers\Backend\LocationController;
@@ -18,7 +18,10 @@ use App\Http\Controllers\Backend\CounterController;
 use App\Http\Controllers\Backend\BusController;
 use App\Http\Controllers\Backend\BusRouteController;
 use App\Http\Controllers\Backend\SeatController;
-use App\Http\Controllers\Backend\SeatBookingController;
+use App\Http\Controllers\Backend\TripController;
+
+
+
 
 
 /*
@@ -33,7 +36,9 @@ use App\Http\Controllers\Backend\SeatBookingController;
 */
 
 // Frontend
-Route::get('home',[HomeController::class,'home'])->name('frontend.home');
+Route::get('/home',[HomeController::class,'home'])->name('frontend.home');
+Route::get('/reserve/form', [HomeController::class, 'reserveForm'])->name('frontend.reserve');
+Route::get('/trip', [HomeController::class, 'showTrip'])->name('frontend.showTrip');
 
 // Registration & login
 Route::get('/user/registration',[LoginController::class,'registration'])->name('user.registration');
@@ -41,11 +46,7 @@ Route::post('/user/registration/post',[LoginController::class,'registrationPost'
 Route::get('/user/login',[LoginController::class,'login'])->name('user.login');
 Route::post('/user/do/login',[LoginController::class,'doLogin'])->name('user.do.login');
 Route::get('/user/logout',[LoginController::class,'logout'])->name('user.logout');
-    
-// Booking
-Route::get('/booking',[BookingController::class,'booking'])->name('frontend.booking'); 
-
-
+  
 // Admin Panel
 Route::group(['prefix'=>'/'],function(){
 
@@ -96,9 +97,10 @@ Route::get('/bus/view/{bus_id}',[BusController::class, 'busDetails'])->name('adm
 Route::get('/bus/delete/{bus_id}',[BusController::class, 'busDelete'])->name('admin.bus.delete');
 Route::get('/bus/create', [BusController::class, 'create'])->name('admin.bus.create');
 Route::post('/bus/store', [BusController::class, 'store'])->name('admin.bus.store');
-Route::get('/bus/search',[BusController::class,'busSearch'])->name('admin.bus.search');
-    
+
+
 // BusRoute
+Route::get('/busroute', [BusRouteController::class, 'search'])->name('admin.search');
 Route::get('/busroute/list', [BusRouteController::class, 'list'])->name('admin.busroute');
 Route::get('/busroute/view/{busroute_id}',[BusRouteController::class, 'bus_route_Details'])->name('admin.bus_route.details');
 Route::get('/busroute/delete/{busroute_id}',[BusRouteController::class, 'bus_route_Delete'])->name('admin.bus_route.delete');
@@ -113,12 +115,11 @@ Route::put('/seat/update/{id}',[SeatController::class,'seatUpdate'])->name('admi
 Route::get('/seat/delete/{id}',[SeatController::class, 'seatDelete'])->name('admin.seat.delete');
 Route::get('/seat/create', [SeatController::class, 'create'])->name('admin.seat.create');
 Route::post('/seat/store', [SeatController::class, 'store'])->name('admin.seat.store');
-    
-// Seat Booking
-Route::get('/seat booking/list', [SeatBookingController::class, 'list'])->name('admin.seatbooking');
-Route::get('/seat booking/create', [SeatBookingController::class, 'create'])->name('admin.seatbooking.create');
-// Route::post('/seat/store', [SeatController::class, 'store'])->name('admin.seat.store');
-    
-  
+
+// Available Trips
+Route::get('trip/list',[TripController::class, 'list'])->name('admin.trip');
+Route::get('trip/create',[TripController::class, 'create'])->name('admin.trip.create');
+Route::post('trip/store',[TripController::class, 'store'])->name('admin.trip.store');
+
 });
 });

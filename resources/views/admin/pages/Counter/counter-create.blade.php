@@ -4,6 +4,7 @@
     <h3>Add Counter</h3>
 
     <form action="{{route('admin.counter.store')}}" method="POST">@csrf
+        
         @if ($errors->any())
         @foreach ($errors->all() as $error)
             <div>

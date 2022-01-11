@@ -1,6 +1,5 @@
-		<!DOCTYPE html>
+<!DOCTYPE html>
 		<html lang="en">
-
 		<head>
 			<meta charset="utf-8">
 			<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -93,10 +92,15 @@
 			<div class="row">
 			<div class="col-md-3">
 			<div class="form-btn">
-			<button class="submit-btn">Search</button>
+		    <a href="{{route('frontend.showTrip')}}">
+            <button class="btn btn-danger mb-1">Search</button>
+            </a>
+			{{-- <button class="submit-btn">Search</button> --}}
 			</div>
 			</div>
 			</div>
+			<br>
+			<a class="btn btn-primary" href="{{route('frontend.home')}}">Back</a>
 			</form>
 			</div>
 			</div>

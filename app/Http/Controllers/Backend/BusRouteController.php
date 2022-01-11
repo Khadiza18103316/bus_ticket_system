@@ -6,7 +6,22 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\BusRoute;
 class BusRouteController extends Controller
+
 {
+   public function search(){
+      $key=null;
+      if(request()->search){
+         $key=request()->search;
+         $busroutes = BusRoute::where('bus_no', 'LIKE', '%' .$key. '%')
+         ->orwhere('bus_type','LIKE','%' .$key. '%')
+         ->orwhere('bus_departure_from','LIKE','%' .$key. '%')
+         ->orwhere('bus_departure_from','LIKE','%' .$key. '%')
+         ->orwhere('bus_fare','LIKE','%' .$key. '%')
+         ->get();
+         return view('admin.pages.Bus.search',compact('busroutes','key')); 
+      }
+
+   }
     public function list(){
        $busroutes=BusRoute::all();
          return view('admin.pages.BusRoute.busroute-list',compact('busroutes'));

@@ -20,17 +20,16 @@ class SeatController extends Controller
       public function store(Request $request){
 
          $request->validate([
-            'seat_no'=>'required|numeric',
-            'seat_type'=>'required',
-            'seat_bus_no'=>'required',
+            'bus_type'=>'required',
+            'bus_no'=>'required',
         ]);
 
       Seat::create([
          //field name for DB || field name for form
     
-         'seat_no'=>$request->seat_no,
-         'seat_type'=>$request->seat_type,    
-         'seat_bus_no'=>$request->seat_bus_no,
+         'seat_id'=>$request->seat_id,
+         'bus_type'=>$request->bus_type,    
+         'bus_no'=>$request->bus_no,
       ]);
       return redirect()->back()->with('msg','Seat created successfully!');
 }
@@ -52,9 +51,9 @@ public function seatUpdate(Request $request,$id){
    // dd($seat);
    if ($seat) {
        $seat->update([
-       'seat_no'=>$request->seat_no,
-         'seat_type'=>$request->seat_type,    
-         'seat_bus_no'=>$request->seat_bus_no,
+       'seat_id'=>$request->seat_id,
+         'bus_type'=>$request->bus_type,    
+         'bus_no'=>$request->bus_no,
        ]);
 
        return redirect()->route('admin.seat')->with('msg','Seat updated!');

@@ -1,11 +1,6 @@
 @extends('admin.master')
 @section('content')
 
-<form action="{{route('admin.bus.search')}}" method="GET">
-    <input name="search" class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
-    {{-- <button style="float: right !important;" class="btn btn-info" type="submit">search</button> --}}
-    </form>
-
     <h3>Bus list</h3>
 
     <a href="{{ route('admin.bus.create') }}" class="btn btn-success">Add bus</a>

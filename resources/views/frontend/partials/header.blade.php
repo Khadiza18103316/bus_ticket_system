@@ -1,4 +1,4 @@
-<header id="header">
+ <header id="header">
     <nav class="navbar navbar-fixed-top" role="banner">
         <div class="container">
             <div class="navbar-header">
@@ -8,14 +8,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Bus Reservation</a>
-            </div>				
-            <div class="collapse navbar-collapse navbar-right">
+                <a class="navbar-brand" href="#">Ticket Reservation</a>
+            </div>
+             <div class="collapse navbar-collapse navbar-right">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#header">Home</a></li>
-                    <li><a href="{{route('frontend.booking')}}">Reservation</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#location">Locations</a></li> 
+                    <li><a href="{{route('frontend.reserve')}}">Reservation</a></li>
                     <li><a href="#contact">Contact</a></li>
 
                     @if(auth()->user())

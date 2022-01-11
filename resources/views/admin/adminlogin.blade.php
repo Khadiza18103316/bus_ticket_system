@@ -51,7 +51,7 @@
 
                     <form id="login-form" class="form" action="{{route('admin.doLogin')}}" method="post">
                         @csrf
-                        <h3 class="text-center text-info">Admin Login</h3>
+                        <h3 class="text-center text-info">Login page</h3>
                         <div class="form-group">
                             <label for="email" class="text-info">Email:</label><br>
                             <input type="text" name="email" id="email" class="form-control">

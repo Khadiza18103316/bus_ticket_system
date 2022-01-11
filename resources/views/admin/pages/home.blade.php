@@ -1,4 +1,4 @@
-@extends('admin.index')
+@extends('admin.master')
 
 @section('content')
 
@@ -7,7 +7,7 @@
             {{session()->get('message')}}
         </p>
     @endif
-    <h1>
+    <h4 style="color:blueviolet" front size="24px">
         Dashboard
-    </h1>
+    </h4>
 @endsection

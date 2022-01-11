@@ -29,7 +29,7 @@ class LocationController extends Controller
                'location_from'=>$request->location_from,
                'location_to'=>$request->location_to,
    ]);
-   return redirect()->back()->with('msg','Location created successfully!');
+   return redirect()->route('admin.location')->with('msg','Location created successfully!');
 }
 public function locationEdit($id){
    // dd($id);
